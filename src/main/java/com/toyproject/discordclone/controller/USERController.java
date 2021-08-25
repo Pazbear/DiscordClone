@@ -1,10 +1,12 @@
 package com.toyproject.discordclone.controller;
 
 import com.toyproject.discordclone.dao.USERDao;
+import com.toyproject.discordclone.service.USERService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class USERController {
 
     @Autowired
-    private USERDao userDao;
+    private USERService userService;
 
-    @GetMapping("/get")
+    @PostMapping("/get")
     public ResponseEntity GetUser(String email, String password){
-        return new ResponseEntity(userDao.getUser(email, password), HttpStatus.OK);
+        return new ResponseEntity(userService.getUser(email, password), HttpStatus.OK);
     }
 }

@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.project.mong.dao.TestDAO">
+<mapper namespace="com.toyproject.discordclone.dao.USERDao">
+    <insert id="createUser" >
+        insert
+            USER(email, password, name, avatar)
+            values
+            (#{email}, #{password}, #{name}, #{avatar})
+    </insert>
     <select id="getUser" resultType="com.toyproject.discordclone.dto.USERDto">
         select
             _id,
             email,
+            password,
             name,
             avatar
         from
             USER
         where email = #{email}
-            and password = #{password}
     </select>
 </mapper>

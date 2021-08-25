@@ -1,9 +1,9 @@
 package com.toyproject.discordclone.dto;
 
 public class INVITATIONDto {
-    private String _id;
+    private int _id;
 
-    private String from_user;
+    private int from_user;
 
-    private String to_user;
+    private int to_user;
 }

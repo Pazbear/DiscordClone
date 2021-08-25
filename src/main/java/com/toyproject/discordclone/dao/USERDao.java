@@ -5,5 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface USERDao {
-    USERDto getUser(String email, String password);
+    void createUser(String email, String password, String name, String avatar);
+    USERDto getUser(String email);
 }

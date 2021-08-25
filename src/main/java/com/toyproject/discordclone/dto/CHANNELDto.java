@@ -1,11 +1,11 @@
 package com.toyproject.discordclone.dto;
 
 public class CHANNELDto {
-    private String _id;
+    private int _id;
 
     private String name;
 
     private int type;
 
-    private String server;
+    private int server;
 }

@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class USERDto {
-    private String _id;
+    private int _id;
 
     private String email;
 

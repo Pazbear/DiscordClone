@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class SERVERDto {
-    private String _id;
+    private int _id;
 
     private String name;
 
-    private String host;
+    private int host;
 }

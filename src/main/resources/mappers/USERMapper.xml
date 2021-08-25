@@ -3,19 +3,25 @@
 <mapper namespace="com.toyproject.discordclone.dao.USERDao">
     <insert id="createUser" >
         insert
-            USER(email, password, name, avatar)
+            USER(email, password, name, avatar, is_enabled, certified_key)
             values
-            (#{email}, #{password}, #{name}, #{avatar})
+            (#{email}, #{password}, #{name}, #{avatar}, 0, #{certified_key})
     </insert>
     <select id="getUser" resultType="com.toyproject.discordclone.dto.USERDto">
         select
-            _id,
-            email,
-            password,
-            name,
-            avatar
+            *
         from
             USER
         where email = #{email}
     </select>
+    <update id="setUserEnabled">
+        update
+            USER
+        set
+            isEnabled = 1
+        where
+            email = #{email}
+        and
+            certified_key = #{certified_key}
+    </update>
 </mapper>

@@ -31,6 +31,9 @@ dependencies {
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
     //security
     implementation 'org.springframework.boot:spring-boot-starter-security:2.5.4'
+
+    //이메일 인증
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.5.4'
 }
 
 test {

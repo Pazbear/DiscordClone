@@ -13,6 +13,8 @@ create TABLE USER(
     password varchar(100) not null,
     name varchar(30) not null,
     avatar varchar(50) not null,
+    is_enabled tinyint(1) default null,
+    certified_key varchar(50) default null,
     primary key(_id,email)
 );
 create TABLE SERVER(

@@ -13,4 +13,8 @@ public class USERDto {
     private String name;
 
     private String avatar;
+
+    private Boolean is_enabled;
+
+    private String certified_key;
 }

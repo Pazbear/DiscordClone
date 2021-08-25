@@ -13,4 +13,7 @@ public class ResponseMessage {
     
     public static final String SEND_MAIL_FAIL = "메일 전송 실패";
     public static final String SEND_MAIL_SUCCESS = "메일 전송 성공";
+
+    public static final String CREATED_SERVER = "서버 생성 성공";
+    public static final String CREATED_SERVER_FAIL = "서버 생성 실패";
 }

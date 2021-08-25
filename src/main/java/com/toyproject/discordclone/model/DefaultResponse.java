@@ -10,4 +10,5 @@ public class DefaultResponse {
     private Object result;
 
     private String msg;
+
 }

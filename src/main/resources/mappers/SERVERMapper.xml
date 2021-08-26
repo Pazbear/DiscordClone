@@ -7,4 +7,12 @@
         values
             (#{name}, #{host})
     </insert>
+    <select id="getServerList" resultType="com.toyproject.discordclone.dto.SERVERDto">
+        select
+            *
+        from
+            SERVER
+        where
+            host = #{host}
+    </select>
 </mapper>

@@ -21,4 +21,10 @@ public class SERVERController {
         System.out.println(serverDto);
         return serverService.createServer(serverDto.getName(), serverDto.getHost());
     }
+
+    @PostMapping("/get")
+    public DefaultResponse GetServerList(@RequestBody SERVERDto serverDto){
+        System.out.println(serverDto);
+        return serverService.getServerList(serverDto.getHost());
+    }
 }

@@ -11,4 +11,5 @@ public class DefaultResponse {
 
     private String msg;
 
+    private String token;
 }

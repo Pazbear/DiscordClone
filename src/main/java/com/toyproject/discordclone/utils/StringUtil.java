@@ -4,7 +4,7 @@ import com.toyproject.discordclone.dto.USERDto;
 
 import java.util.Random;
 
-public class StringUtils {
+public class StringUtil {
     public static String generateCertifiedKey(){
         Random random = new Random();
         StringBuffer sb = new StringBuffer();

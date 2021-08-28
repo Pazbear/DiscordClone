@@ -1,9 +1,8 @@
 package com.toyproject.discordclone.service;
 
-import com.toyproject.discordclone.dto.USERDto;
 import com.toyproject.discordclone.global.ResponseMessage;
 import com.toyproject.discordclone.model.DefaultResponse;
-import com.toyproject.discordclone.utils.StringUtils;
+import com.toyproject.discordclone.utils.StringUtil;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -29,7 +28,7 @@ public class MailService {
             helper.setFrom("DiscordClone_sejong");
             helper.setTo(email);
             helper.setSubject("discord_clone authentication");
-            helper.setText(StringUtils.getMailContent(email, name, certifiedKey), true);
+            helper.setText(StringUtil.getMailContent(email, name, certifiedKey), true);
 
             javaMailSender.send(mimeMessage);
             res.setSuccess(true);

@@ -2,6 +2,7 @@ package com.toyproject.discordclone.controller;
 
 import com.toyproject.discordclone.dao.USERDao;
 import com.toyproject.discordclone.dto.USERDto;
+import com.toyproject.discordclone.jwt.JwtUtil;
 import com.toyproject.discordclone.model.DefaultResponse;
 import com.toyproject.discordclone.service.MailService;
 import com.toyproject.discordclone.service.USERService;
@@ -17,6 +18,8 @@ import java.util.HashMap;
 @RestController
 @RequestMapping("/api/user")
 public class USERController {
+    @Autowired
+    private JwtUtil jwtUtil;
 
     @Autowired
     private USERService userService;
@@ -24,16 +27,18 @@ public class USERController {
     @Autowired
     private MailService mailService;
 
-    @PostMapping("/create")
-    public DefaultResponse CreateUser(@RequestBody USERDto userDto){
+    @PostMapping("/signup")
+    public DefaultResponse SignUp(@RequestBody USERDto userDto){
         System.out.println(userDto);
-        return userService.createUser(userDto.getEmail(), userDto.getPassword(),userDto.getName(),userDto.getAvatar());
+        return userService.signUp(userDto.getEmail(), userDto.getPassword(),userDto.getName(),userDto.getAvatar());
     }
 
-    @PostMapping("/get")
-    public DefaultResponse GetUser(@RequestBody USERDto userDto){
+    @PostMapping("/signin")
+    public DefaultResponse SignIn(@RequestBody USERDto userDto){
         System.out.println(userDto);
-        return userService.getUser(userDto.getEmail(), userDto.getPassword());
+        DefaultResponse res = userService.signIn(userDto.getEmail(), userDto.getPassword());
+        res.setToken(jwtUtil.generateToken(userDto));
+        return res;
     }
 
     @PostMapping("/mail/auth")
